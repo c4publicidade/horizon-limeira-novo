@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import bedroom from '../assets/decorado1.jpeg';
-import living from '../assets/decorado2.jpeg';
-import dining from '../assets/decorado3.jpeg';
+import bedroom from '../assets/decorado1.webp';
+import living from '../assets/decorado2.webp';
+import dining from '../assets/decorado3.webp';
 import torre1 from '../assets/torre1.webp';
 import torre2 from '../assets/torre2.webp';
 import torre3 from '../assets/torre3.webp';
