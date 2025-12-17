@@ -75,9 +75,47 @@
     build: {
       target: 'esnext',
       outDir: 'build',
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor': [
+              'react',
+              'react-dom',
+              '@radix-ui/react-dialog',
+              '@radix-ui/react-dropdown-menu',
+              '@radix-ui/react-accordion',
+            ],
+            'lucide': ['lucide-react'],
+            'ui': [
+              './src/components/ui/button.tsx',
+              './src/components/ui/card.tsx',
+              './src/components/ui/dialog.tsx',
+            ],
+          },
+        },
+      },
+      cssCodeSplit: true,
+      sourcemap: false,
+      reportCompressedSize: true,
     },
     server: {
       port: 3000,
       open: true,
+    },
+    optimizeDeps: {
+      include: [
+        'react',
+        'react-dom',
+        'lucide-react',
+        '@radix-ui/react-dialog',
+        '@radix-ui/react-dropdown-menu',
+      ],
     },
   });
