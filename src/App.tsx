@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { FloorPlans } from './components/FloorPlans';
+import { Floorplans } from './components/Floorplans';
 import { Decorated } from './components/Decorated';
 import { Implantation } from './components/Implantation';
 import { Amenities } from './components/Amenities';
@@ -20,7 +20,7 @@ export default function App() {
       <About />
       <Amenities />
       <Decorated />
-      <FloorPlans />
+      <Floorplans />
       <Implantation />
       <Location />
       <Events />
