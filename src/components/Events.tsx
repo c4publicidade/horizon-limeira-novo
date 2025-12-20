@@ -150,43 +150,34 @@ export function Events() {
         {/* Videos Tab */}
         {activeTab === 'videos' && (
           <div className="max-w-6xl mx-auto">
-            {/* Main Video */}
+            
+            {/* Vídeo Principal */}
             <div className="mb-8">
-              <div className="aspect-video bg-gray-900 flex items-center justify-center rounded-2xl">
-                <div className="text-center p-12">
-                  <div className="w-20 h-20 bg-wine rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Play size={40} className="text-white ml-1" fill="currentColor" />
-                  </div>
-                  <p className="text-white mb-2 text-xl">Vídeo Institucional</p>
-                  <p className="text-white/60 text-sm">
-                    Insira aqui o vídeo principal do empreendimento<br/>
-                    (YouTube embed ou upload de vídeo)
-                  </p>
-                </div>
+              <div className="relative w-full aspect-video overflow-hidden rounded-2xl">
+                <iframe
+                  src="https://player.vimeo.com/video/1147938650?h=d73cc96cf7&badge=0&autopause=0"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Horizon Limeira - Vídeo Principal"
+                />
               </div>
             </div>
 
-            {/* Secondary Videos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {['Tour Virtual', 'Evento de Lançamento'].map((title, index) => (
-                <div key={index} className="aspect-video bg-gray-800 rounded-xl flex items-center justify-center group cursor-pointer">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-wine transition-colors">
-                      <Play size={32} className="text-white ml-1" fill="currentColor" />
-                    </div>
-                    <p className="text-white">{title}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-8">
-              <p className="text-gray-500 text-sm">
-                * Adicione vídeos do empreendimento, tour virtual e eventos
-              </p>
+            <div className="mb-8">
+              <div className="relative w-full aspect-video overflow-hidden rounded-2xl">
+                <iframe
+                  src="https://player.vimeo.com/video/1147938631?h=29d7fe2f50&badge=0&autopause=0"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Horizon Limeira - Evento"
+                />
+              </div>
             </div>
           </div>
         )}
+
       </div>
     </section>
   );

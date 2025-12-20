@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Loader2, CheckCircle2 } from 'lucide-react';
 import { leadsAPI } from '../services/api';
 
+// Função para mascarar telefone no formato (99) 99999-9999
+const formatPhoneNumber = (value: string): string => {
+  // Remove tudo que não é dígito
+  const digits = value.replace(/\D/g, '');
+  
+  // Limita a 11 dígitos (Brasil)
+  if (digits.length === 0) return '';
+  if (digits.length <= 2) return `(${digits}`;
+  if (digits.length <= 6) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  if (digits.length <= 11) return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
+  
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
+};
+
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -36,10 +50,21 @@ export function Contact() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    
+    // Aplicar máscara de telefone se for o campo phone
+    if (name === 'phone') {
+      const maskedValue = formatPhoneNumber(value);
+      setFormData({
+        ...formData,
+        [name]: maskedValue,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   return (

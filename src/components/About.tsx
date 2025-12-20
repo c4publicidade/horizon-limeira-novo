@@ -1,5 +1,4 @@
 import React from 'react';
-import horizonLogo from 'figma:asset/a17b6b9eee35633d8dceaf31458e7b0d6d81d6f5.png';
 import { BuildingIcon, ElevatorIcon, FloorPlanIcon, CarIcon, DeckIcon, HousesIcon } from './FeatureIcons';
 
 export function About() {
