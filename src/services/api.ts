@@ -1,4 +1,4 @@
-const API_URL = 'https://api.horizonlimeira.com.br/wp-json/leads/v1';
+const API_URL = 'https://api.horizonlimeira.com.br/wp-json/leads/v1/create';
 const API_KEY = 'minh4_ChAv3_sEcr3T4';
 
 interface LeadData {
