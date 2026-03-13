@@ -48,12 +48,10 @@ export function Header() {
             onClick={() => scrollToSection('#hero')}
             className="transition-all duration-500"
           >
-            <img 
-              src={logo} 
-              alt="Horizon Limeira" 
-              className={`h-32 md:h-44 w-auto object-contain transition-all duration-500 ${
-                isScrolled ? 'h-24 md:h-32' : ''
-              }`}
+            <img
+              src={logo}
+              alt="Horizon Limeira"
+              style={{ width: 150, height: 'auto' }}
             />
           </button>
 
